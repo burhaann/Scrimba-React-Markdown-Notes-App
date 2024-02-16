@@ -13,6 +13,10 @@ export default function App() {
     (notes[0] && notes[0].id) || ""
   );
 
+  React.useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
+
   function createNewNote() {
     const newNote = {
       id: nanoid(),
