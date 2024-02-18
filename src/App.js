@@ -57,7 +57,7 @@ export default function App() {
       updatedAt: Date.now(),
     };
     const newNoteRef = await addDoc(notesCollection, newNote);
-    setCurrentNoteId(newNote.id);
+    setCurrentNoteId(newNoteRef.id);
   }
 
   async function updateNote(text) {
